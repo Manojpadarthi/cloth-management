@@ -1,0 +1,61 @@
+package com.kanakadurga.com.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="user")
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	@NotNull
+	@Column(name="user_name")
+	private String username;
+	@NotNull
+	@Column(name="password")
+	private String password;
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return username;
+	}
+	public void setName(String name) {
+		this.username = name;
+	}
+	public User( @NotNull String name, @NotNull String password) {
+		super();
+		//this.id = id;
+		this.username = name;
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + username + ", password=" + password + "]";
+	}
+	
+	
+
+}

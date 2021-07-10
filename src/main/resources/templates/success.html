@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<table>
+<tr><h4 >logged in Successfully</h4></tr>
+<tr><td><h4>Welcome Back </h4></td>
+<td><h4 th:text="${logger.name}" ></h4></td></tr>
+</table>
+
+
+<table>
+<form th:action="@{/order}" method="post" th:object="${buy}">
+<tr th:each="product:${products}">
+
+<td ><input type="checkbox" value="${product.id}"/></td>
+ <input type = "submit" value = "Order"/>
+
+<td ><h4 th:text="${product.name}" ></td>
+<td ><h4 th:text="${product.price}" >/></td>
+<!-- <td ><input type="text" name="number"/></td> -->
+</tr>
+</form>
+
+</table>
+ 
+
+
+<form th:action = "@{/logout}" method = "post">
+         <input type = "submit" value = "Sign Out"/>
+ </form>
+ 
+ 
+</body>
+</html>

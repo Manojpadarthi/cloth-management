@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+ <form th:action = "@{/register}" 
+ th:object="${logger}" method = "post">
+         <div>
+            <label> User Name : <input type = "text" name = "name"/> </label>
+         </div>
+         <div>
+            <label> Password: <input type = "text" name = "password"/> </label>
+         </div>
+         <div>
+            <input type = "submit" value = "Register"/>
+         </div>
+      </form>
+  <h4 th:text="${message.message}" ></h4>
+</body>
+</html>
